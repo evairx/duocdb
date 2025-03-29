@@ -1,0 +1,14 @@
+---
+const { id } = Astro.params;
+
+import Layout from "@/layouts/main.astro";
+import Profile from "@/components/profile/main";
+import Rating from "@/components/ratings.astro"
+---
+
+<Layout>
+    <div class="main-content">
+		{id && <Profile id={id} client:load/>}
+		<Rating />
+	</div>
+</Layout>

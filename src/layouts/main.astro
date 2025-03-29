@@ -1,0 +1,22 @@
+---
+const { title } = Astro.props;
+import '@/styles/global.css';
+---
+
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="title" content="DuocDB">
+		<meta name="description" content="base de datos de instituto DuocUc, busca estadistica, historial de notas por semestres, y horario">
+		<meta name="keywords" content="duocuc, duocdb, database, db">
+		<meta name="robots" content="index, follow">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="language" content="Spanish">
+		<title>{title || "DuocDB"}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>

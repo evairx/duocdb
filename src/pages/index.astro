@@ -1,0 +1,15 @@
+---
+import '@/styles/global.css';
+import Layout from "@/layouts/main.astro"
+import Menu from '@/components/menu.astro';
+import Title from "@/components/animated/title"
+import Search from "@/components/search"
+---
+
+<Layout>
+	<Menu/>
+	<div class="h-[70dvh] flex items-center justify-center flex-col px-4">
+		<Title client:load/>
+		<Search client:load/>
+	</div>
+</Layout>
