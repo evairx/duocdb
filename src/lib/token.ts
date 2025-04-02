@@ -1,13 +1,14 @@
+import { TOKEN_URL, TOKEN_BODY } from "astro:env/server";
+
 export async function getToken() {
     try {
-        const response = await fetch(
-            `${import.meta.env.TOKEN_URL}`,{
+        const response = await fetch(`${TOKEN_URL}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    body: import.meta.env.TOKEN_BODY,
+                    body: TOKEN_BODY,
                 })
             }
         );

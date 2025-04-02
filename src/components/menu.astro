@@ -1,28 +1,7 @@
----
-import DbSvg from "@/assets/svg/DbSvg";
----
-
-<nav class="mt-[2rem] flex justify-center items-center p-2.5 animate-fadeInTop">
-    <a href="/" class="no-underline text-black flex items-center gap-2">
-        <div class="flex items-center gap-2 transition-transform duration-300 ease-in-out cursor-default select-none hover:scale-110">
-            <DbSvg client:load />
-            <h4 class="text-[1.450rem] font-bold">DuocDB</h4>
+<nav class="mt-[1rem] flex items-center justify-center flex-wrap animate-fade-in">
+    <a href="/">
+        <div>
+            <h4 class="font-semibold text-[1.4rem]">DuocDB</h4>
         </div>
     </a>
 </nav>
-
-<style>
-@keyframes fadeInTop {
-    0% {
-        transform: translateY(-30px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-.animate-fadeInTop {
-    animation: fadeInTop 0.8s ease-out forwards;
-}
-</style>

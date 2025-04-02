@@ -1,14 +1,14 @@
 ---
 const { id } = Astro.params;
-
-import Layout from "@/layouts/main.astro";
-import Profile from "@/components/profile/main";
-import Rating from "@/components/ratings.astro"
+import Layout from '@/layouts/main.astro'
+import Header from '@/components/header/header.astro';
+import HeaderSkeleton from '@/components/header/headerLoading.astro';
+import Overlay from "@/components/overlay"
 ---
 
 <Layout>
-    <div class="main-content">
-		{id && <Profile id={id} client:load/>}
-		<Rating />
-	</div>
+	<Header name={id} server:defer>
+		<HeaderSkeleton slot="fallback"/>
+	</Header>
+	<Overlay client:only/>
 </Layout>
