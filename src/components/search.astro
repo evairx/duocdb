@@ -1,0 +1,24 @@
+<div class="relative flex items-center w-[25rem] max-w-full fade-in-main hover:scale-[1.05] transition-all duration-300 ease-in-out">
+    <input id="searchInput" placeholder="Buscar..." class="p-2.5 pl-4 bg-white border border-gray-400 rounded-full w-full h-[2.8rem] shadow-sm focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-all" type="text" value=""></input>
+    <button id="searchButton" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black text-white border-none w-[34px] h-[34px] rounded-full flex items-center justify-center cursor-pointer transition-all hover:bg-gray-800">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-[20px]"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+    </button>
+</div>
+
+<script>
+    function handleSearch() {
+        const input = document.getElementById('searchInput') as HTMLInputElement;
+        const searchTerm = input.value.trim();
+        
+        if (searchTerm) {
+            window.location.href = `/profile/${searchTerm}`;
+        }
+    }
+
+    document.getElementById('searchButton')?.addEventListener('click', handleSearch);
+    document.getElementById('searchInput')?.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            handleSearch();
+        }
+    });
+</script>

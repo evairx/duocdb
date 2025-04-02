@@ -1,13 +1,11 @@
 ---
 import Layout from "@/layouts/main.astro"
 import Menu from "@/components/menu.astro"
-import NotFoundSvg from "@/assets/svg/404"
 ---
 
 <Layout>
     <Menu/>
     <div class="h-[80dvh] flex items-center justify-center flex-col px-4">
-        <NotFoundSvg client:load/>
         <h2 class="font-bold fade-in-delay">Pagina no encontrada</h2>
     </div>
 </Layout>

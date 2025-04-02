@@ -2,11 +2,12 @@
 import '@/styles/global.css';
 import Layout from "@/layouts/main.astro"
 import Menu from '@/components/menu.astro';
+import Search from '@/components/search.astro';
 ---
 
 <Layout>
 	<Menu/>
-	<div class="h-[70dvh] flex items-center justify-center flex-col px-4">
-	
+	<div class="h-[80dvh] flex items-center justify-center flex-col px-4">
+		<Search/>
 	</div>
 </Layout>
