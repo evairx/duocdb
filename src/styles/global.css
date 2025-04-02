@@ -24,8 +24,12 @@
 }
 
 @layer components {
+  .logo-fade-in-top {
+    animation: logo-fade-in-top 1.5s ease-in-out;
+  }
+
   .fade-in-main {
-    animation: fade-in 1.3s ease-in-out;
+    animation: fade-in 1.6s;
   }
 
   .animate-fade-in {
@@ -54,5 +58,17 @@
         opacity: 1;
         transform: translateY(0);
     }
+  }
+
+  @keyframes logo-fade-in-top {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
   }
 }

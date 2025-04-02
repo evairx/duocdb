@@ -1,12 +1,15 @@
 ---
 const { id } = Astro.params;
+
 import Layout from '@/layouts/main.astro'
+import Menu from '@/components/menu.astro';
 import Header from '@/components/header/header.astro';
 import HeaderSkeleton from '@/components/header/headerLoading.astro';
 import Overlay from "@/components/overlay"
 ---
 
 <Layout>
+	<Menu/>
 	<Header name={id} server:defer>
 		<HeaderSkeleton slot="fallback"/>
 	</Header>

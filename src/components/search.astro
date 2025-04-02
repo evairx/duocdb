@@ -6,12 +6,14 @@
 </div>
 
 <script>
+     import { navigate } from "astro:transitions/client";
+
     function handleSearch() {
         const input = document.getElementById('searchInput') as HTMLInputElement;
         const searchTerm = input.value.trim();
         
         if (searchTerm) {
-            window.location.href = `/profile/${searchTerm}`;
+           navigate(`/profile/${searchTerm}`);
         }
     }
 
