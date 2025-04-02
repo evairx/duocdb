@@ -1,3 +1,5 @@
+import { SCHEDULE_URL, GRADES_URL } from "astro:env/server";
+
 type Schedule = {
   asignaturaCodigoSap: string;
   descSede: string;
@@ -97,10 +99,10 @@ function formatTitle(title: string): string {
 export const getSchedule = async (username: string, userId: string, token: string): Promise<DailySchedule> => {
   try {
     const [scheduleRes, coursesRes] = await Promise.all([
-      fetch(`${import.meta.env.SCHEDULE_URL}/${username}/${userId}`, {
+      fetch(`${SCHEDULE_URL}/${username}/${userId}`, {
         headers: { Authorization: `Bearer ${token}` }
       }).then(res => res.json() as Promise<Schedule[]>),
-      fetch(`${import.meta.env.GRADES_URL}/${username}/${userId}`, {
+      fetch(`${GRADES_URL}/${username}/${userId}`, {
         headers: { Authorization: `Bearer ${token}` }
       }).then(res => res.json() as Promise<Course[]>)
     ]);

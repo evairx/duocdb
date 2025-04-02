@@ -1,7 +1,8 @@
+import { STATS_URL } from "astro:env/server"
+
 export async function getStats(id: string, token: string): Promise<{ token: string } | null> {
     try {
-        const response = await fetch(
-            `${import.meta.env.STATS_URL}/${id}`,{
+        const response = await fetch(`${STATS_URL}/${id}`,{
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`

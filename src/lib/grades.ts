@@ -1,6 +1,5 @@
 import type { Asignatura, GroupedData, AsignaturaProcesada, PeriodoAcademico, EstadoInscripcion } from '@/types/Grades';
-
-const API_URL = import.meta.env.GRADES_URL;
+import { GRADES_URL } from "astro:env/server";
 
 export async function getGrades(usuario: string, id: number,  token: string): Promise<GroupedData> {
     try {
@@ -13,8 +12,7 @@ export async function getGrades(usuario: string, id: number,  token: string): Pr
 }
 
 async function fetchAsignaturas(usuario: string, id: number, token: string): Promise<Asignatura[]> {
-    const response = await fetch(
-        `${API_URL}/${usuario}/${id}`,
+    const response = await fetch(`${GRADES_URL}/${usuario}/${id}`,
         {
             method: 'GET',
             headers: {
