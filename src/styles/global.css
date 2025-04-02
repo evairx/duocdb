@@ -17,6 +17,11 @@
 
 * {
   font-family: "Inter";
+  user-select: none; /* Evita la selección de texto */
+  -webkit-user-drag: none; /* Evita arrastrar imágenes en Safari */
+  -webkit-touch-callout: none; /* Evita el menú contextual en iOS */
+  -webkit-tap-highlight-color: transparent; /* Elimina el efecto de toque en móviles */
+  outline: none; /* Evita los contornos en elementos enfocados */
 }
 
 .white-content {

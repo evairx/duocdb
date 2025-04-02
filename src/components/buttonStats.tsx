@@ -1,4 +1,4 @@
-import { useStore } from '@nanostores/preact';
+import { useStore } from '@nanostores/react';
 import { stats } from '@/context/statsview';
 
 import StatsSvg from '@/assets/svg/stats';

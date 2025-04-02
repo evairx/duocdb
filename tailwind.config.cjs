@@ -8,7 +8,7 @@ module.exports = {
 	theme: {
 		extend: {
 			backdropBlur: {
-				xs: '2px',
+				xs: '1px',
 			},
 			colors: {
 				background: "hsl(var(--background))",

@@ -12,12 +12,10 @@ import Overlay from "@/components/overlay"
 <Layout>
 	<Menu/>
 	<Header name={id} server:defer>
-		<HeaderSkeleton slot="fallback"/>
+		<HeaderSkeleton slot="fallback" />
 	</Header>
 	
-	<Statistic name={id} server:defer>
-		<p slot="fallback">LOADING....</p>
-	</Statistic>
+	<Statistic name={id} server:defer />
 
 	<Overlay client:only/>
 </Layout>

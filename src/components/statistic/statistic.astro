@@ -4,8 +4,17 @@ const { name } = Astro.props;
 import { getToken } from "@/lib/token";
 import { getStats } from "@/lib/statistic";
 
+import StatsClient from "@/components/statistic/statsClient";
+
 const token = await getToken();
 const stats = (await getStats(name, token?.token ?? '')) as any;
+
+const data = {
+    plan: stats?.planesEstudios[0]?.descripcionPlanEstudios,
+    finalizado: stats?.planesEstudios[0]?.planEstudioTerminado,
+    creditos: stats?.planesEstudios[0]?.avancePorCreditos.creditosAprobados.creditos,
+    creditosDuoc: stats?.creditosDuoc
+}
 ---
 
-<p class="z-50">{JSON.stringify(stats, null, 2)}</p>
+<StatsClient plan={stats?.planesEstudios[0]} client:load/>

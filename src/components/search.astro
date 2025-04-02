@@ -6,21 +6,29 @@
 </div>
 
 <script>
-     import { navigate } from "astro:transitions/client";
+    import { navigate } from "astro:transitions/client";
 
     function handleSearch() {
         const input = document.getElementById('searchInput') as HTMLInputElement;
         const searchTerm = input.value.trim();
-        
         if (searchTerm) {
-           navigate(`/profile/${searchTerm}`);
+            navigate(`/profile/${searchTerm}`);
         }
     }
 
-    document.getElementById('searchButton')?.addEventListener('click', handleSearch);
-    document.getElementById('searchInput')?.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            handleSearch();
-        }
-    });
+    function setupEventListeners() {
+        const searchButton = document.getElementById('searchButton');
+        const searchInput = document.getElementById('searchInput');
+
+        searchButton?.addEventListener('click', handleSearch);
+        searchInput?.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                handleSearch();
+            }
+        });
+    }
+
+    setupEventListeners();
+
+    document.addEventListener('astro:page-load', setupEventListeners);
 </script>
