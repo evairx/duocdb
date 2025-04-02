@@ -4,6 +4,7 @@ const { id } = Astro.params;
 import Layout from '@/layouts/main.astro'
 import Menu from '@/components/menu.astro';
 import Header from '@/components/header/header.astro';
+import Statistic from '@/components/statistic/statistic.astro';
 import HeaderSkeleton from '@/components/header/headerLoading.astro';
 import Overlay from "@/components/overlay"
 ---
@@ -13,5 +14,10 @@ import Overlay from "@/components/overlay"
 	<Header name={id} server:defer>
 		<HeaderSkeleton slot="fallback"/>
 	</Header>
+	
+	<Statistic name={id} server:defer>
+		<p slot="fallback">LOADING....</p>
+	</Statistic>
+
 	<Overlay client:only/>
 </Layout>

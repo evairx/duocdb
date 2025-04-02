@@ -1,0 +1,11 @@
+---
+const { name } = Astro.props;
+
+import { getToken } from "@/lib/token";
+import { getStats } from "@/lib/statistic";
+
+const token = await getToken();
+const stats = (await getStats(name, token?.token ?? '')) as any;
+---
+
+<p class="z-50">{JSON.stringify(stats, null, 2)}</p>
