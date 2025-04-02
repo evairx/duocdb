@@ -6,6 +6,7 @@ import Menu from '@/components/menu.astro';
 import Header from '@/components/header/header.astro';
 import Statistic from '@/components/statistic/statistic.astro';
 import HeaderSkeleton from '@/components/header/headerLoading.astro';
+import GradesSkeleton from '@/components/grades/gradesLoading.astro';
 import Overlay from "@/components/overlay"
 ---
 
@@ -16,6 +17,8 @@ import Overlay from "@/components/overlay"
 	</Header>
 	
 	<Statistic name={id} server:defer />
+
+	<GradesSkeleton />
 
 	<Overlay client:only/>
 </Layout>

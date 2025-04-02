@@ -203,16 +203,7 @@ export default function Statistics({ plan }: { plan?: PlanData }) {
                             %
                         </span>
                         </div>
-                        <div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
-                        <motion.div
-                            className="h-full bg-black rounded-full"
-                            initial={{ width: 0 }}
-                            animate={{
-                            width: `${Math.min(100, (avancePorCreditos.creditosOptativo.creditos / plan.creditosOptativos) * 100)}%`,
-                            }}
-                            transition={{ delay: 1.2, duration: 0.8, ease: "easeOut" }}
-                        />
-                        </div>
+                        <AnimatedProgress value={Math.min(100, (avancePorCreditos.creditosOptativo.creditos / plan.creditosOptativos) * 100)} delay={0.8} />
                     </div>
 
                 <motion.div variants={itemVariants} custom={5} className="space-y-3">

@@ -1,8 +1,21 @@
+import { useEffect } from 'react';
 import { useStore } from '@nanostores/react';
 import { stats } from '@/context/statsview';
 
 export default function Overlay() {
     const $stats = useStore(stats);
+
+    useEffect(() => {
+        if ($stats) {
+            document.body.classList.add("overflow-hidden");
+        } else {
+            document.body.classList.remove("overflow-hidden");
+        }
+    
+        return () => {
+            document.body.classList.remove("overflow-hidden");
+        };
+    }, [$stats]);
 
     return (
         $stats && 
